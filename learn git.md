@@ -15,4 +15,4 @@ $git push ' 可以单独push文件'
 pull   拉取代码
 $git pull
 
-check
+checkout 检出
