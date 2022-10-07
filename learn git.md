@@ -16,3 +16,6 @@ pull   拉取代码
 $git pull
 
 checkout 检出
+
+查看状态
+$ git status
