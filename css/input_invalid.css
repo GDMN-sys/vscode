@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --them: #1d2b3a
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: var(--them);
+}
+
+.box {
+    position: relative;
+    width: 250px;
+}
+
+.box input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background: var(--them);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.box span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    font-size: 1em;
+    /* 使用pointer-events来阻止元素成为鼠标事件目标不一定意味着元素上的事件侦听器永远不会触发 */
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.25);
+    /* text-transform:uppercase; */
+    transition: 0.5s;
+
+}
+
+/* 在input输入时触发:valid */
+.box input:valid~span,
+.box input:focus~span {
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    padding: 0 10px;
+    font-size: 0.65em;
+    background-color: var(--them);
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+}
+
+.box:nth-child(2) input:valid~span,
+.box:nth-child(2) input:focus~span {
+    background: #00dfc4;
+    color: var(--them);
+    border-radius: 2px;
+
+}
+
+.box input:valid,
+.box input:focus {
+    border: 1px solid #00dfc4;
+    color: #00dfc4;
+}
