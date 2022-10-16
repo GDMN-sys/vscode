@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login_1.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="content">
+            <h1>welcome</h1>
+            <p>JOIN US!</p>
+            <div class="img">
+                <img src="../img/login_1/waoku.jpg">
+
+            </div>
+        </div>
+        <div class="container">
+            <!-- 注册页面 -->
+            <div class="item">
+                <!-- title -->
+                <div class="title">
+                    <h1>register</h1>
+                </div>
+                <!-- 输入框 -->
+                <div class="input_box">
+                    <input value="" name="register" type="text" placeholder="Enter your Name">
+                    <input value="" name="register" type="password" placeholder="Enter your Password">
+                </div>
+                <!-- 按钮 -->
+                <div class="btn_box">
+                    <button>register</button>
+                    <p onclick="changePage()">You already have an account to log in</p>
+                </div>
+            </div>
+            <!-- 登录界面 -->
+            <div class="item">
+                <!-- title -->
+                <div class="title">
+                    <h1>LOGIN</h1>
+                </div>
+                <!-- 输入框 -->
+                <div class="input_box">
+                    <input value="" name="login" type="text" placeholder="Enter your Name">
+                    <input value="" name="login" type="password" placeholder="Enter your Password">
+                    <input value="" name="login" type="password" placeholder="Enter reset your Password">
+                </div>
+                <!-- 按钮 -->
+                <div class="btn_box">
+                    <button>login</button>
+                    <p onclick="changePage()">No account to register</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let flag = true;
+    let content = document.getElementsByClassName("content")[0]
+    let img = document.querySelectorAll('img[src="../img/login_1/waoku.jpg"]')[0];
+    console.log(content);
+    function changePage() {
+        if (flag) {
+            content.style.cssText = "transform:  translateX(100%);background: #bfe2f0; ";
+            // content.style.background = "#bfe2f0";
+            // content.style.transform = "translateX(100%)";
+            img.src = "../img/login_1/wuwu.jpeg";
+        } else {
+            content.style.cssText = "transform:  translateX(0%);background: #ebd4dc; ";
+            // content.style.background = "#ebd4dc";
+            // content.style.transform = "translateX(0%)";
+            img.src = "../img/login_1/waoku.jpg";
+        }
+        flag = !flag;
+    }
+
+    var button1 = document.querySelectorAll('button')[0];
+    var button2 = document.querySelectorAll('button')[1];
+    var Input = document.querySelectorAll("input[name='login']");
+    var Input2 = document.querySelectorAll("input[name='register']");
+
+    button1.addEventListener("click", function () {
+        for (let i = 0; i <= Input.length; i++) {
+            Input2[i].value = "";
+        }
+    });
+
+    button2.addEventListener("click", function () {
+        for (let i = 0; i <= Input2.length; i++) {
+            Input[i].value = "";
+        }
+    });
+
+    function clearInput() {
+        for (let i = 0; i <= Input.length; i++) {
+            Input[i].value = "";
+        }
+    }
+
+
+</script>
+
+</html>
